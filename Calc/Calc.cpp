@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 
 float adding(float firstNUM, float secondNUM)
 {
@@ -10,9 +10,12 @@ float substracting(float firstNUM, float secondNUM)
     return firstNUM - secondNUM;
 }
 
-float division(float firstNUM, float secondNUM)
+void division(float firstNUM, float secondNUM)
 {
-    return firstNUM / secondNUM;
+    if (secondNUM == 0)
+        std::cout << "Impossible to divide by zero";
+    else
+        std::cout << "Result of substracting: " << firstNUM << " - " << secondNUM << " = " << firstNUM / secondNUM;
 }
 
 float multipling(float firstNUM, float secondNUM)
@@ -37,7 +40,8 @@ int main()
             std::cout << "Result of substracting: " << a << " - " << b << " = " << substracting(a, b) << std::endl;
             break;
         case '/':
-            std::cout << "Result of division: " << a << " / " << b << " = " << division(a, b) << std::endl;
+            division(a, b);
+            std::cout << std::endl;
             break;
         case '*':
             std::cout << "Result of multipling: " << a << " * " << b << " = " << multipling(a, b) << std::endl;
